@@ -14,10 +14,11 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-
+	DDRA = 0x00; PORTA = 0xFF;
+	DDRC = 0x00; PORTC = 0x00;
     /* Insert your solution below */
-    while (1) {
-
-    }
-    return 1;
+	while (1) {
+		if ( (PINA & 0x01) || (PINA &0x02)) {PINC | 0x60;}
+	}
+	return 1;
 }
